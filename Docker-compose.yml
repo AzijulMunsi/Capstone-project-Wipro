@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - api-gateway
+    networks:
+      - backend
+
+  api-gateway:
+    build: ./backend/api-gateway
+    ports:
+      - "5000:5000"
+    depends_on:
+      - auth-service
+      - employee-service
+    networks:
+      - backend
+
+  auth-service:
+    build: ./backend/auth-service
+    ports:
+      - "5001:5001"  
+    networks:
+      - backend
+
+  employee-service:
+    build: ./backend/employee-service
+    ports:
+      - "5002-5005:5002"   
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

@@ -1,0 +1,31 @@
+<form class="login-form">
+  <div class="login-container">
+    <div class="login-header">
+      <h2>Login</h2>
+      <p>Access your ExpenseManager account</p>
+    </div>
+    
+    <div class="form-group">
+      <input type="text" placeholder="Username" [(ngModel)]="username" name="username" required>
+      <i class="fas fa-user"></i>
+    </div>
+    
+    <div class="form-group">
+      <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+      <i class="fas fa-lock"></i>
+    </div>
+
+    <!-- Login buttons for employee / manager on same page -->
+    <div class="login-actions">
+      <button type="button" class="login-button" (click)="loginAs('employee')">
+        <i class="fas fa-sign-in-alt"></i> Login 
+      </button>
+
+      
+    </div>
+    
+    <div class="login-footer">
+      <p>Don't have an account? <a routerLink="/signup">Sign Up (Employee/Manager)</a></p>
+    </div>
+  </div>
+</form>
