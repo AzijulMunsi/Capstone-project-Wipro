@@ -5,7 +5,7 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
-# Service URLs (adjust if running in Docker Compose later)
+# Service URLs 
 AUTH_SERVICE = "http://auth-service:5001"
 EMPLOYEE_SERVICE = "http://employee-service:5002"
 

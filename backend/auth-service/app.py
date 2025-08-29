@@ -20,7 +20,7 @@ with app.app_context():
         db.session.add(manager)
         db.session.commit()
 
-# Signup endpoint (allowing employee or manager from client)
+
 @app.route('/signup', methods=['POST'])
 def signup():
     data = request.get_json()
